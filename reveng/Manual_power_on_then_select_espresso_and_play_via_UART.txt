@@ -1,0 +1,130 @@
+fuchsi@raspberrypi:~ $ stty -F /dev/ttyUSB2 115200 raw cs8 -cstopb -parenb
+fuchsi@raspberrypi:~ $ stty -F /dev/ttyUSB2
+speed 115200 baud; line = 0;
+min = 1; time = 0;
+-brkint -icrnl -imaxbel
+-opost
+-isig -icanon
+fuchsi@raspberrypi:~ $ echo „test msg“ > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ echo "d5 55 0a 00 00 03 02 00 00 00 32 25" > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e ^C
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5 55 0a 00 00 03 02 00 00 00 32 25"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5 55 0a 00 00 03 02 00 00 00 32 25"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d555 0a 00 00 03 02 00 00 00 32 25"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d555 0a 00 00 03 02 00 00 00 32 25"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550a000003020000003225"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550a000003020000003225"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550a000003020000003225"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550a000003020000003225"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", " d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302010000210c"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ 
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55501000003020000001910"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302020000351a"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302020000351a"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302020000351a"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d55500000003020000012505"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302020000351a"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ perl -e 'print pack "H*", "d5550000000302020000351a"' > /dev/ttyUSB2
+fuchsi@raspberrypi:~ $ 
