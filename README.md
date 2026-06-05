@@ -129,14 +129,14 @@ tail -f /var/log/coffee26.log
 
 ## 📱 Home Assistant Integration
 
+<img width="1071" height="918" alt="image" src="https://github.com/user-attachments/assets/cc10ee06-51ad-44f0-93ac-d7c7e646cef9" />
+
+
 Das Skript unterstützt vollständiges **MQTT Auto-Discovery**. Sobald das Skript startet, tauchen alle Schalter (Befehle) und Binärsensoren (LED-Status, Warnungen) automatisch in Home Assistant auf. Es werden keine zusätzlichen Helfer (Input Booleans) oder Automatisierungen mehr benötigt.
-
-<img width="1071" height="918" alt="image" src="https://github.com/user-attachments/assets/fb40607d-6d07-4547-af23-d995d17fc944" />
-
 
 ### Dashboard YAML
 
-<img width="1038" height="772" alt="image" src="https://github.com/user-attachments/assets/85beebc4-8ea4-4545-9878-861674f19e6d" />
+<img width="1047" height="763" alt="image" src="https://github.com/user-attachments/assets/4978a4ed-07ae-4031-9d33-998629bc799c" />
 
 
 Erstelle eine neue Ansicht in deinem Dashboard und kopiere diesen YAML-Code hinein. Er kombiniert die Status-LEDs der Maschine direkt mit den ausführenden Buttons für ein sauberes Interface:
