@@ -24,7 +24,7 @@ class PhilipsProtocol:
         self.BASE_CRC = 0x2D01
 
         # Lookup Table: Mapping (Byte-Index, Neuer Wert) -> XOR-Delta für die Checksumme
-        # Diese Deltas wurden direkt aus deinen funktionierenden Hex-Strings extrahiert!
+        # Diese Deltas wurden direkt aus Hex-String-Logs extrahiert!
         self.XOR_LOOKUP = {
             # Byte 0: System-Befehle
             (0, 0x0A): 0x1F24,  # Beep
