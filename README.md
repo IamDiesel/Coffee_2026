@@ -591,3 +591,13 @@ actions:
       title: Alarm2Coffee
 
 ```
+
+ ### Workaround ARP-Tabelle
+ Falls das Problem auftritt, dass der Pi nicht mehr im Netzwerk auffindbar ist, kann ein cronjob angelegt werden:
+ ```
+ crontab -e
+ * * * * * /usr/sbin/arping -U -c 1 -I wlan0 192.168.X.XX > /dev/null 2>&1
+```
+Wobei die IP entsprechend auf die IP eures Kiosk angepasst werden muss.
+        
+    
