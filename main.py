@@ -3,7 +3,7 @@ import sys
 import signal
 
 # Eigene Module importieren
-import secrets
+import my_config as secrets
 from mqtt_manager import MqttManager
 from protocol import PhilipsProtocol
 from controller import CoffeeController

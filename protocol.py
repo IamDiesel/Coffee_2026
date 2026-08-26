@@ -1,6 +1,6 @@
 class PhilipsProtocol:
     def __init__(self):
-        # Dictionaries (Status-Dekodierung)
+        # Dictionaries aus der originalen Firmware (Status-Dekodierung)
         self.statesDrinkSelection = {
             0x00: 'Off', 0x03: 'Half Brightness', 0x07: 'Full Brightness',
             0x38: 'Double', 0x3F: 'Full Brightness'
@@ -14,7 +14,7 @@ class PhilipsProtocol:
         self.calcCleanLEDStates = {0x00: 'Both Off', 0x38: 'Calc / Clean orange', 0x07: 'unknown'}
         self.playPauseLEDStates = {0x00: 'Off', 0x07: 'On'}
 
-        # --- XOR-CHECKSUMMEN SYSTEM ---
+        # --- DAS NEUE XOR-CHECKSUMMEN SYSTEM ---
         # Der Header (immer gleich)
         self.HEADER = b'\xd5\x55'
 
@@ -24,7 +24,7 @@ class PhilipsProtocol:
         self.BASE_CRC = 0x2D01
 
         # Lookup Table: Mapping (Byte-Index, Neuer Wert) -> XOR-Delta für die Checksumme
-        # Diese Deltas wurden direkt aus Hex-String-Logs extrahiert!
+        # Diese Deltas wurden direkt aus deinen funktionierenden Hex-Strings extrahiert!
         self.XOR_LOOKUP = {
             # Byte 0: System-Befehle
             (0, 0x0A): 0x1F24,  # Beep

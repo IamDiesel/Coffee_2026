@@ -10,7 +10,7 @@ import unittest
 import queue
 
 from hardware_interface import CoffeeMachineHardware
-from secrets import HA_URL, HA_TOKEN
+from my_config import HA_URL, HA_TOKEN
 from test_full_coverage import PhilipsFullCoverageTest
 import mqtt_manager
 import protocol

@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, patch
 import time
 import requests
 
-from secrets import MQTT_BROKER_IP, MQTT_USER, MQTT_PASSWORD, HA_URL, HA_TOKEN
+from my_config import MQTT_BROKER_IP, MQTT_USER, MQTT_PASSWORD, HA_URL, HA_TOKEN
 
 from protocol import PhilipsProtocol
 from controller import CoffeeController

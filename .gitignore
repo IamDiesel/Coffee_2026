@@ -5,6 +5,7 @@ __pycache__/
 
 # secreets
 secrety.py
+my_config.py
 
 # C extensions
 *.so
