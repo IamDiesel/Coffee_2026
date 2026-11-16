@@ -35,3 +35,12 @@ class CoffeeMachineHardware(ABC):
     def attach_mqtt(self, mqtt_manager):
         """Erlaubt der Hardware, den MQTT-Traffic mitzusniffen."""
         pass
+
+    def set_mitm(self, active: bool):
+        """Schaltet zwischen Pi-Steuerung (MITM, True) und Handbetrieb (Bypass, False).
+
+        Standard-Implementierung fuer Hardware ohne Relais (z. B. Digital Twin):
+        Handbetrieb wird auf relais_off() abgebildet, MITM ist ein No-Op.
+        """
+        if not active:
+            self.relais_off()

@@ -39,6 +39,18 @@ class RealHardware(CoffeeMachineHardware):
         GPIO.output(self.RELAIS_TX_RX_GPIO, GPIO.HIGH)  # Relais fällt ab -> BYPASS Modus
         print("[HARDWARE] Relais: BYPASS Modus AKTIV. Maschine läuft autonom.")
 
+    def set_mitm(self, active: bool):
+        """Pi-Steuerung (MITM) oder Handbetrieb (Bypass) per Relais."""
+        if active:
+            self._relais_on()
+            time.sleep(0.05)  # Relaiskontakte prellen lassen
+            # Beim Umschalten entstehen Break/Muell-Bytes -> verwerfen
+            for dev in (self.dev_mainboard, self.dev_display):
+                if dev.is_open:
+                    dev.reset_input_buffer()
+        else:
+            self.relais_off()
+
     def toggle_display_power(self, duration: float = 0.4):
         print(f"[HARDWARE] Toggle Display Power für {duration}s...")
         GPIO.output(self.RELAIS_PWR_DISP_GPIO, GPIO.LOW)  # Strom AUS

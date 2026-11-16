@@ -1,6 +1,20 @@
 import time
 import sys
 import signal
+import builtins
+from datetime import datetime
+
+# --- ZEITSTEMPEL FUER ALLE LOGAUSGABEN ---
+# coffee26.log hatte bisher keine Uhrzeiten; ohne die laesst sich ein Ausfall
+# nicht mit Wecker, Power-On oder Neustart in Verbindung bringen.
+_orig_print = builtins.print
+
+
+def _ts_print(*args, **kwargs):
+    _orig_print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), *args, **kwargs)
+
+
+builtins.print = _ts_print
 
 # Eigene Module importieren
 import my_config as secrets
@@ -56,7 +70,10 @@ def main():
         password=secrets.MQTT_PASSWORD,
         client_id=client_name
     )
-    controller = CoffeeController(hardware, protocol, mqtt)
+    controller = CoffeeController(
+        hardware, protocol, mqtt,
+        auto_bypass=getattr(secrets, "AUTO_BYPASS_ON_POWER_FAIL", True)
+    )
 
     wifi_dog = None
     if not TEST_MODE and hasattr(secrets, 'GATEWAY_IP'):
