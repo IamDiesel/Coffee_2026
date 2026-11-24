@@ -28,7 +28,8 @@ class PhilipsProtocol:
         self.XOR_LOOKUP = {
             # Byte 0: System-Befehle
             (0, 0x0A): 0x1F24,  # Beep
-            (0, 0x01): 0x3411,  # Power On (No Clean)
+            (0, 0x01): 0x3411,  # Power On (01) - Display sendet das beim Warmstart
+            (0, 0x02): 0x2923,  # Power On (02) - Display sendet das beim Kaltstart (Baseline 20.11.2026)
 
             # Byte 5: Getränke & Power Off
             (5, 0x01): 0x0C0D,  # Power Off
@@ -45,8 +46,11 @@ class PhilipsProtocol:
             (7, 0x01): 0x0804,  # Play/Pause
         }
 
-        # Behalte die komplexe Boot-Sequenz als Konstante (da sie viele Bytes gleichzeitig ändert)
-        self.CMD_POWER_ON_CLEAN = b'\xd5\x55\x02\x01\x02\x00\x02\x00\x00\x00\x38\x15'
+        # ALT: Dieser Frame kam in keiner Aufzeichnung des echten Displays vor (vermutlich aus
+        # einem anderen Projekt / einer anderen Geraetevariante). Das Mainboard hat ihn zwar
+        # akzeptiert; seit der Baseline-Messung vom 20.11.2026 wird aber der echte Frame
+        # d5 55 02 00 00 03 02 00 00 00 04 22 gesendet. Nur noch als Rueckfall verfuegbar.
+        self.CMD_POWER_ON_CLEAN_LEGACY = b'\xd5\x55\x02\x01\x02\x00\x02\x00\x00\x00\x38\x15'
 
     def calculate_checksum(self, payload):
         """Berechnet die Philips XOR-Checksumme für ein 8-Byte Payload-Array"""
@@ -96,11 +100,12 @@ class PhilipsProtocol:
             'bean': {6: 0x02},
             'cup': {6: 0x04},
             'power_on_no_clean': {0: 0x01},
+            'power_on_clean': {0: 0x02},
             'beep': {0: 0x0A}
         }
 
-        if command_name == 'power_on_clean':
-            return self.CMD_POWER_ON_CLEAN
+        if command_name == 'power_on_clean_legacy':
+            return self.CMD_POWER_ON_CLEAN_LEGACY
 
         if command_name in commands:
             return self.build_command(commands[command_name])

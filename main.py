@@ -72,7 +72,8 @@ def main():
     )
     controller = CoffeeController(
         hardware, protocol, mqtt,
-        auto_bypass=getattr(secrets, "AUTO_BYPASS_ON_POWER_FAIL", True)
+        auto_bypass=getattr(secrets, "AUTO_BYPASS_ON_POWER_FAIL", True),
+        power_cmd_timeout=getattr(secrets, "POWER_CMD_TIMEOUT", None)
     )
 
     wifi_dog = None

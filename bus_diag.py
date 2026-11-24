@@ -109,10 +109,14 @@ class BusStats:
 
         counters = read_uart_counters()
         levels = read_rx_levels()
-        for name, lvl in levels.items():
-            if lvl != self._levels.get(name):
-                print(f"[BUS] PEGELWECHSEL {name}: {self._levels.get(name)} -> {lvl}")
-        self._levels = levels
+        # Pegel ist nur bei ruhendem Bus aussagekraeftig; bei laufendem Verkehr
+        # trifft die Stichprobe zufaellig ein Bit und erzeugt Schein-Wechsel.
+        bus_idle = self.disp_frames == 0 and self.main_frames == 0
+        if bus_idle:
+            for name, lvl in levels.items():
+                if lvl != self._levels.get(name):
+                    print(f"[BUS] PEGELWECHSEL {name}: {self._levels.get(name)} -> {lvl}")
+            self._levels = levels
         print(f"[BUS] {self.INTERVAL}s: "
               f"Display {self.disp_frames} Frames/{self.disp_junk} Muell "
               f"[AMA2 {self._driver_text(counters, 'disp')}] | "

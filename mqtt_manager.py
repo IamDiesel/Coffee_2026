@@ -79,6 +79,11 @@ class MqttManager:
                 print(f"[MQTT] Unbekannter Payload fuer mitm: {payload!r} (erwartet ON/OFF)")
             return
 
+        if command_str == "power_timeout":
+            # Auswahl "Power-On Wartezeit": Payload ist die Sekundenzahl (2/4/6)
+            self.commands.put(f"power_timeout:{payload}")
+            return
+
         self.commands.put(command_str)
 
     def update_states(self, status_dict):
@@ -163,7 +168,8 @@ class MqttManager:
         # --- 3. STATUS (TEXT SENSORS) ---
         sensors = [
             ("bean_led", "Bohnen", "mdi:coffee-outline", "diagnostic"),
-            ("cup_size_led", "Tasse", "mdi:cup", "diagnostic")
+            ("cup_size_led", "Tasse", "mdi:cup", "diagnostic"),
+            ("power_on_result", "Letzter Power-On", "mdi:power-cycle", "diagnostic")
         ]
 
         for sens_id, name, icon, category in sensors:
@@ -195,6 +201,24 @@ class MqttManager:
             "payload_off": "OFF",
             "json_attributes_topic": "philips2200/stat/mitm_attr",
             "icon": "mdi:swap-horizontal",
+            "availability_topic": "philips2200/stat/availability",
+            "device": device_info
+        }
+        self.client.publish(topic, json.dumps(payload), retain=True)
+
+        # --- 4b. AUSWAHL: WARTEZEIT PRO WECKVERSUCH (Test 2 / 4 / 6 s) ---
+        # retain=True: HA merkt sich die Auswahl am Broker, der Pi bekommt sie nach
+        # einem Neustart automatisch wieder zugestellt.
+        topic = "homeassistant/select/philips2200/power_timeout/config"
+        payload = {
+            "name": "Power-On Wartezeit (s)",
+            "unique_id": "p2200_sel_power_timeout",
+            "command_topic": "philips2200/cmnd/power_timeout",
+            "state_topic": "philips2200/stat/power_timeout",
+            "options": ["2", "4", "6"],
+            "retain": True,
+            "icon": "mdi:timer-cog-outline",
+            "entity_category": "config",
             "availability_topic": "philips2200/stat/availability",
             "device": device_info
         }
